@@ -1,0 +1,20 @@
+# Memorization vs generalization
+
+<b>Overfitting</b> is an occurrence when a model is so well trained on its initial dataset, that as soon as you use a slightly different input, it breaks.
+<br />
+<br />
+<b>Testing accuracy</b> refers to an error rate using data from outside of the training dataset.
+If you were to train a model, you would see the training accuracy increase.
+However, you'll notice that after the initial spike, the <i>testing accuracy</i> would slowly decrease.
+This is what <i>memorization</i> refers to.
+Memorization means being really good at recognizing the data a model was trained on, while <i>generalization</i> refers to a model being able to recognize patterns in the initial dataset, and then apply that knowledge outside of that dataset.
+<br />
+<br />
+Generalization is the sought after feature of models, which can be achieved by combating overfitting.
+<b>Regularization</b> refers to ways to combat overfitting.
+The indusry standard way of regularization is called <b>Dropout</b>
+<br />
+<br />
+This way of combating overfitting is rather strange.
+It involves, while training, randomly setting neurons in the network to 0.
+This causes the network to train using random subsections of the network.

@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Fira_Code } from 'next/font/google'
+import { roadmap } from "@/consts/nav";
+import Link from "next/link";
 
 const firacode = Fira_Code({
   subsets: ['latin'],
@@ -19,10 +21,43 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${firacode.className} antialiased bg-[#070b0a]`}
+        className={`${firacode.className} text-green-500 antialiased bg-[#070b0a]`}
       >
-        {children}
+        <div className="flex flex-row gap-4">
+          <div className="p-6">
+            <h2>
+              Roadmap
+            </h2>
+            <pre>
+              │ <br />
+              {roadmap.map((link: any, id: number) => (
+                <LinkComponent link={link} key={id} isFirst={true} />
+              ))}
+            </pre>
+          </div>
+          <div className="max-w-[700px] max-h-screen overflow-auto p-6">
+              {children}
+          </div>
+        </div>
       </body>
     </html>
+  );
+}
+
+function LinkComponent({ link, isFirst }: any) {
+  return (
+    <div>
+      {isFirst ? "├─┬─" : "│ ├── "}{link.href ? <Link href={link.href}>{link.label}</Link> : link.label}
+      {link.sublinks && link.sublinks.length > 0 && (
+        <>
+          {link.sublinks.map((sublink: any, id: number) => (
+            <div key={id}>
+              <LinkComponent link={sublink} isFirst={false} />
+            </div>
+          ))}
+          │
+        </>
+      )}
+    </div>
   );
 }

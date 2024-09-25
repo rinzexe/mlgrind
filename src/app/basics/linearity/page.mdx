@@ -1,0 +1,18 @@
+# Linearity
+
+The concept of linearity is hard to comprehend.
+You don't have to understand it entirely, but in case someone asks, here's a simple explanation to help you with replying:
+<br />
+<br />
+For every multi-layer network, there is a corresponding, two layer network.
+The default implementation of a multi-layer network would not be just that, basically a longer version of a two layer network.
+This is what makes it a linear network.
+<br />
+<br />
+Linear networks aren't completely useless, they work as long as the inputs and outputs have some sort of comprehensive correlation.
+However, as soon as the relationship between inputs/outputs gets more complicated, it lacks function.
+<br />
+<br />
+To combat this, an <b>activation function</b> is used at each neuron.
+The most widely used is the <a href="https://en.wikipedia.org/wiki/Rectifier_(neural_networks)">relu</a> function.
+This changes the way the neurons correlate to each other, and allows to those hidden layers to be useful.

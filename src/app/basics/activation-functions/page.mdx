@@ -1,0 +1,44 @@
+# Activation functions
+
+Activation functions are a subset of... functions... that are within certain constraints.
+Some functions are better for certain things, and other functions are better for others.
+There is however, a general guideline for using/picking the right activation functions.
+<br />
+<br />
+
+## Relu
+
+The first activation function everyone learns.
+Gets the job done but doesn't provide any advantages.
+<br />
+<br />
+
+## Sigmoid
+
+Sigmoid is one of the most used activation function.
+It maps any amount of numbers to a single number between 0 and 1 with an increasing, and later decreasing slope.
+It is used for both hidden and output layers, more commonly for output layers.
+<br />
+<br />
+
+## Tanh
+
+Tanh does the same thing as sigmoid, except that instead of mapping values from 0 to 1, it maps from -1 to 1.
+This allows <i>negative correlation</i> which is useful in most situtations.
+It is up to you whether to use tanh in output layers or not.
+In most cases however, the output ranges from 0 to 1.
+<br />
+<br />
+
+## Softmax
+
+While sigmoid is usually used for unrelated yes/no questions, softmax is used for <i>predicting a single label out of many</i>.
+This is for example used for image classification tasks, like trying to classify which of 10 numbers is written on a wall.
+
+<br />
+<br />
+## No activation function
+
+This is a special case only used in output layers.
+If you want to, for example, predict temperature or stock growth, you would use no activation function.
+This is because the output is something other than a propability, aka the output can be bigger than 1.0 (or 100%)
