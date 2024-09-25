@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Fira_Code } from 'next/font/google'
-import { roadmap } from "@/consts/nav";
+import { ILink, roadmap } from "@/consts/nav";
 import Link from "next/link";
 
 const firacode = Fira_Code({
@@ -30,13 +30,13 @@ export default function RootLayout({
             </h2>
             <pre>
               │ <br />
-              {roadmap.map((link: any, id: number) => (
+              {roadmap.map((link: ILink, id: number) => (
                 <LinkComponent link={link} key={id} isFirst={true} />
               ))}
             </pre>
           </div>
           <div className="max-w-[700px] max-h-screen overflow-auto p-6">
-              {children}
+            {children}
           </div>
         </div>
       </body>
@@ -44,13 +44,13 @@ export default function RootLayout({
   );
 }
 
-function LinkComponent({ link, isFirst }: any) {
+function LinkComponent({ link, isFirst }: { link: ILink, isFirst: boolean }) {
   return (
     <div>
       {isFirst ? "├─┬─" : "│ ├── "}{link.href ? <Link href={link.href}>{link.label}</Link> : link.label}
       {link.sublinks && link.sublinks.length > 0 && (
         <>
-          {link.sublinks.map((sublink: any, id: number) => (
+          {link.sublinks.map((sublink: ILink, id: number) => (
             <div key={id}>
               <LinkComponent link={sublink} isFirst={false} />
             </div>

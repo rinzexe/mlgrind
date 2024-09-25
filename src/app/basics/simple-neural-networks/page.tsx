@@ -1,8 +1,4 @@
 import Code from '@/components/code';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { dark, dracula, duotoneDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
-import { coy } from 'react-syntax-highlighter/dist/esm/styles/prism';
-
 
 export default function Zero() {
     return (

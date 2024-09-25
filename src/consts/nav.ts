@@ -1,18 +1,18 @@
-export interface Link {
+export interface ILink {
     label: string
     href?: string
     active?: boolean
-    sublinks?: Link[]
+    sublinks?: ILink[]
 }
 
-export const menu: Link[] = [
+export const menu: ILink[] = [
     {
         label: "Home",
         href: "/"
     }
 ]
 
-export const roadmap: Link[] = [
+export const roadmap: ILink[] = [
     {
         label: "home",
         href: "/"
