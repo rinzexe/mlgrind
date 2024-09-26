@@ -1,0 +1,52 @@
+# Layers
+
+In a cnn, there are 3 main types of layers (excluding input and output layers).
+These layers are:
+<br />
+<br />
+- Convolutional layers
+- Pooling layers
+- Fully-connected layers
+<br />
+<br />
+These layers typically follow this structure: 
+<br />
+<br />
+<pre>
+│
+├── Input layer
+│
+├── Convolutional layer
+│
+├── Pooling layer
+│
+├── Convolutional layer
+│
+├── Pooling layer
+│
+├── Fully-connected layer
+│
+├── Fully-connected layer
+│
+├── Output layer
+</pre>
+<br />
+<br />
+The amount of convolutional and pooling layers can be adjusted to your needs, and they also do not have to be subsequent.
+They usually scale with the dimensions and complexity of input, as you might guess more complexity = more layers. 
+For 28x28 number recognition tasks, which is usually what people start with, two layers is enough.
+Typically, in larger models, convolutional layers are stacked on top of each other before applying a pooling layer.
+<br />
+<br />
+
+## Convolutional layer
+
+Convolutional layer's function is somewhat complicated. As explained in the convolution tab, they have multiple kernels inside them with trained weights, which loop over the input and produce multiple output matrices.
+These outputs are then sent to the next layer, whether it's a pooling layer or a convolutional layer.
+<br />
+<br />
+
+## Pooling layer
+
+The function of a pooling layer is in contrast relatively simple, they take in an input, and downsample it to a lower resolution
+In the structure above, the first pooling layer could compress the output of the first convolutional layer from 28x28 to a 14x14 matrix, which is then passed onto the next layer.

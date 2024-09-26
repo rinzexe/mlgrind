@@ -54,4 +54,24 @@ export const roadmap: ILink[] = [
             },
         ]
     },
+    {
+        label: "cnns",
+        sublinks: [
+            {
+                label: "convolution",
+                href: "/cnns/convolution",
+            },
+            {
+                label: "kernels",
+                href: "/cnns/kernels",
+            },
+            {
+                label: "layers",
+                href: "/cnns/layers",
+            },
+        ]
+    },
+    {
+        label: "nlp",
+    },
 ]

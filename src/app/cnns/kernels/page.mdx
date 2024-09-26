@@ -1,0 +1,52 @@
+# Kernels
+
+Kernels are an extremely important part of convolutional layers.
+It's essential to understand how they operate, and what they do.
+<br />
+<br />
+
+Different kernels are used for different purposes, examples of which are:
+<br />
+<pre>
+-0.5    -1    -0.5
+0       0      0
+0.5     1      0.5
+</pre>
+*Detects horizontal edges*
+<br />
+<pre>
+-0.5    0   0.5
+-1      0   1
+-0.5    0   0.5
+</pre>
+*Detects vertical edges*
+<br />
+<pre>
+0       0.25    0
+0.25    -1      0.25
+0       0.25    0
+</pre>
+*Detects edges in all directions*
+
+<br />
+<br />
+Typically, kernels aren't **pre-defined**.
+They are usually randomly initalized, and then automatically learned through backpropagation.
+They're stacked together in each convolutional layer to caputre different features of the input.
+<br />
+<br />
+
+## Stride
+
+Stride refers to how much the kernel moves per step.
+For example, taken an 64x64 image, a kernel could only calculate every 2 pixels, reducing the output size to 32x32.
+This might result in loss of important details, so use it carefully.
+<br />
+<br />
+
+## Padding
+
+Padding adds extra pixels around the edges of the input.
+These are usually 0, they don't serve any function other than avoiding an error when the kernel is calculating edge pixels.
+<br />
+<br />
